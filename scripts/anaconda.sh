@@ -1,11 +1,13 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # download and install
 wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh -O /tmp/anaconda.sh
-bash /tmp/anaconda.sh -b -p $HOME/anaconda
+BASE=/opt/apps
+mkdir -p $BASE
+bash /tmp/anaconda.sh -b -p $BASE/anaconda
 rm /tmp/anaconda.sh
-export PATH=$HOME/anaconda/bin:$PATH # add to PATH
-echo 'export PATH=$HOME/anaconda/bin:$PATH' >> /etc/bashrc
+export PATH=$BASE/anaconda/bin:$PATH # add to PATH
+echo 'export PATH=$BASE/anaconda/bin:$PATH' >> /etc/bashrc
 hash -r
 
 # some configuration to make it easy to install things
