@@ -1,4 +1,4 @@
-UoMImage Read Me
+UoMImage ReadMe
 ================
 
 Overview
