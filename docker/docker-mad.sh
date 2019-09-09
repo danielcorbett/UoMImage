@@ -19,7 +19,7 @@ sed -i '0,/\%end/s//bind-utils\nbash\nyum\nvim-minimal\ncentos-release\nless\n\-
 
 sed -i '$ d' $MAIN_KS
 
-for i in base.sh anaconda.sh vagrant.sh R.sh MAD.sh;
+for i in base-nogui.sh anaconda.sh vagrant.sh R.sh MAD.sh;
 do
 	echo -e "\n\n###  Script $i  ###" >> $MAIN_KS
 	tail -n +2 $SCRIPT_DIR/$i >> $MAIN_KS
