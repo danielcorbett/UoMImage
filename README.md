@@ -8,7 +8,8 @@ The object of this repository is to have a single way to create disk images usin
 Additions to any of the built images can be created by using the Bash scripts in the 'scripts' directory.
 
 
-##Building Virtualbox Images
+Building Virtualbox Images
+--------------------------
 Making use of the main kickstart file, the program Packer is used to build the image. Packer makes use of JSON files and Vagrant.
 
 To build a Virtualbox image the following command can be used...
@@ -16,5 +17,6 @@ To build a Virtualbox image the following command can be used...
 	packer build ./vagrant-templates/template-base.json
 
 
-##Building Docker Images
+Building Docker Images
+----------------------
 This can be done by using the scripts in the 'scripts/docker' directory. It requires the main kickstart file and optionally using the additions scripts. It also requires the livemedia-creator program and docker to be running in the background. It also requires the boot.iso which is available from the general Centos download repositories.
