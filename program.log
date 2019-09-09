@@ -1,0 +1,41 @@
+Running... mount -o loop /data/rit_image/UoMImage/http/boot.iso /var/tmp/lorax.imgutils.hKSyad
+mount: /dev/loop3 is write-protected, mounting read-only
+Running... isoinfo -d -i /data/rit_image/UoMImage/http/boot.iso
+CD-ROM is in ISO 9660 format
+System id: LINUX
+Volume id: CentOS 7 x86_64
+Volume set id: 
+Publisher id: 
+Data preparer id: 
+Application id: GENISOIMAGE ISO 9660/HFS FILESYSTEM CREATOR (C) 1993 E.YOUNGDALE (C) 1997-2006 J.PEARSON/J.SCHILLING (C) 2006-2007 CDRKIT TEAM
+Copyright File id: 
+Abstract File id: 
+Bibliographic File id: 
+Volume set size is: 1
+Volume set sequence number is: 1
+Logical block size is: 2048
+Volume size is: 259255
+El Torito VD version 1 found, boot catalog is in sector 46
+Joliet with UCS level 3 found
+Rock Ridge signatures version 1 found
+Eltorito validation header:
+    Hid 1
+    Arch 0 (x86)
+    ID ''
+    Key 55 AA
+    Eltorito defaultboot header:
+        Bootid 88 (bootable)
+        Boot media 0 (No Emulation Boot)
+        Load segment 0
+        Sys type 0
+        Nsect 4
+        Bootoff 647E 25726
+Running... virt-install -n LiveOS-1e335e13-d261-452e-b526-5540f370fb68 -r 2048 --noreboot --noautoconsole --graphics none --initrd-inject /data/rit_image/UoMImage/centos-base.ks --disk path=/var/tmp/centos-base.iso,format=raw,size=9 --disk path=/data/rit_image/UoMImage/http/boot.iso,device=cdrom --extra-args ks=file:/centos-base.ks inst.cmdline console=ttyS0 stage2=hd:LABEL=CentOS\x207\x20x86_64 --location /var/tmp/lorax.imgutils.hKSyad --channel tcp,host=127.0.0.1:36152,mode=connect,target_type=virtio,name=org.fedoraproject.anaconda.log.0
+WARNING  No operating system detected, VM performance may suffer. Specify an OS with --os-variant for optimal results.
+
+Starting install...
+Retrieving file vmlinuz...                                  | 6.3 MB  00:00     
+Retrieving file initrd.img...                               |  50 MB  00:00     
+Allocating 'centos-base.iso'                                | 9.0 GB  00:00     
+Domain installation still in progress. You can reconnect to 
+the console to complete the installation process.

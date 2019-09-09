@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./docker/get_centos_iso.sh
+
 MAIN_NAME=centos-r
 MAIN_KS=$MAIN_NAME.ks
 MAIN_ISO=$MAIN_NAME.iso

@@ -1,3 +1,37 @@
-2019-09-09 16:42:56,674 INFO livemedia-creator: livemedia-creator 19.7.19-1
-2019-09-09 16:42:56,674 DEBUG livemedia-creator: Namespace(anaconda_args=None, app_file='appliance.xml', app_name=None, app_template=None, arch=None, armplatform=None, compress_args=[], compression='xz', disk_image=None, domacboot=False, dracut_args=None, fs_image=None, fs_label='Anaconda', image_name='centos-base.iso', image_only=False, iso='/data/rit_image/UoMImage/http/boot.iso', keep_image=True, kernel_args=None, ks=['/data/rit_image/UoMImage/centos-base.ks'], live_rootfs_keep_size=False, live_rootfs_size=0, location=None, logfile='/data/rit_image/UoMImage/centos-base.log', lorax_templates='/usr/share/lorax', make_ami=False, make_appliance=False, make_disk=False, make_fsimage=False, make_iso=True, make_ostree_live=False, make_pxe_live=False, make_tar=False, no_virt=False, ovmf_path='/usr/share/OVMF/', project='Red Hat Enterprise Linux', proxy=None, qcow2=False, qcow2_args=[], ram=2048, releasever='7', result_dir=None, squashfs_args=None, title='Linux Live Media', tmp='/var/tmp', vcpus=1, virt_uefi=False, vnc=None, volid=None)
-2019-09-09 16:42:56,674 ERROR livemedia-creator: The iso /data/rit_image/UoMImage/http/boot.iso is missing.
+2019-09-09 16:56:51,956 INFO livemedia-creator: livemedia-creator 19.7.19-1
+2019-09-09 16:56:51,956 DEBUG livemedia-creator: Namespace(anaconda_args=None, app_file='appliance.xml', app_name=None, app_template=None, arch=None, armplatform=None, compress_args=[], compression='xz', disk_image=None, domacboot=False, dracut_args=None, fs_image=None, fs_label='Anaconda', image_name='centos-base.iso', image_only=False, iso='/data/rit_image/UoMImage/http/boot.iso', keep_image=True, kernel_args=None, ks=['/data/rit_image/UoMImage/centos-base.ks'], live_rootfs_keep_size=False, live_rootfs_size=0, location=None, logfile='/data/rit_image/UoMImage/centos-base.log', lorax_templates='/usr/share/lorax', make_ami=False, make_appliance=False, make_disk=False, make_fsimage=False, make_iso=True, make_ostree_live=False, make_pxe_live=False, make_tar=False, no_virt=False, ovmf_path='/usr/share/OVMF/', project='Red Hat Enterprise Linux', proxy=None, qcow2=False, qcow2_args=[], ram=2048, releasever='7', result_dir=None, squashfs_args=None, title='Linux Live Media', tmp='/var/tmp', vcpus=1, virt_uefi=False, vnc=None, volid=None)
+2019-09-09 16:56:52,005 INFO pylorax: disk_size = 9GiB
+2019-09-09 16:56:52,005 INFO pylorax: disk_img = /var/tmp/centos-base.iso
+2019-09-09 16:56:52,005 INFO pylorax: install_log = /data/rit_image/UoMImage/virt-install.log
+2019-09-09 16:56:52,006 DEBUG pylorax.imgutils: make tmp mountdir /var/tmp/lorax.imgutils.hKSyad
+2019-09-09 16:56:57,064 DEBUG pylorax: CD-ROM is in ISO 9660 format
+System id: LINUX
+Volume id: CentOS 7 x86_64
+Volume set id: 
+Publisher id: 
+Data preparer id: 
+Application id: GENISOIMAGE ISO 9660/HFS FILESYSTEM CREATOR (C) 1993 E.YOUNGDALE (C) 1997-2006 J.PEARSON/J.SCHILLING (C) 2006-2007 CDRKIT TEAM
+Copyright File id: 
+Abstract File id: 
+Bibliographic File id: 
+Volume set size is: 1
+Volume set sequence number is: 1
+Logical block size is: 2048
+Volume size is: 259255
+El Torito VD version 1 found, boot catalog is in sector 46
+Joliet with UCS level 3 found
+Rock Ridge signatures version 1 found
+Eltorito validation header:
+    Hid 1
+    Arch 0 (x86)
+    ID ''
+    Key 55 AA
+    Eltorito defaultboot header:
+        Bootid 88 (bootable)
+        Boot media 0 (No Emulation Boot)
+        Load segment 0
+        Sys type 0
+        Nsect 4
+        Bootoff 647E 25726
+
+2019-09-09 16:56:57,066 INFO pylorax: Running virt-install.

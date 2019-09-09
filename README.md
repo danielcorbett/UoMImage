@@ -25,6 +25,4 @@ Once that has finished you should have a centos7-\*.box file. To use this file f
 
 Building Docker Images
 ----------------------
-This can be done by using the scripts in the 'docker' directory. It requires the main kickstart file and optionally using the additions scripts. It also requires the livemedia-creator program and docker to be running in the background. It also requires the boot.iso which can be obtained by running the following command...
-
-	cd http; wget `cat boot_iso_link.txt`
+This can be done by using the scripts in the 'docker' directory. It requires the main kickstart file and optionally using the additions scripts. It also requires the livemedia-creator program and docker to be running in the background. It also requires the boot.iso which will be automatically downloaded by the docker scripts if it doesn't exist.
