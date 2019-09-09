@@ -6,10 +6,10 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "/scripts/additions/base.sh",
-            "/scripts/additions/anaconda.sh",
-            "/scripts/additions/vagrant.sh",
-            "/scripts/additions/R.sh"
+            "/scripts/base.sh",
+            "/scripts/anaconda.sh",
+            "/scripts/vagrant.sh",
+            "/scripts/R.sh"
           ]
         },
       }
@@ -20,7 +20,7 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "centos7.box"
+          "output": "centos7-R.box"
         },
       }
     }
