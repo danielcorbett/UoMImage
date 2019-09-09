@@ -19,4 +19,4 @@ To build a Virtualbox image the following command can be used...
 
 Building Docker Images
 ----------------------
-This can be done by using the scripts in the 'scripts/docker' directory. It requires the main kickstart file and optionally using the additions scripts. It also requires the livemedia-creator program and docker to be running in the background. It also requires the boot.iso which is available from the general Centos download repositories.
+This can be done by using the scripts in the 'scripts/docker' directory. It requires the main kickstart file and optionally using the additions scripts. It also requires the livemedia-creator program and docker to be running in the background. It also requires the boot.iso which is available from the general Centos download repositories and whose location can be found by the links from within the relevant files in the 'http' directory.
