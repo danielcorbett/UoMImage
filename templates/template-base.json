@@ -6,10 +6,10 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "/scripts/base.sh",
-            "/scripts/anaconda.sh",
-            "/scripts/vagrant.sh",
-            "/scripts/cleanup.sh"
+            "scripts/base.sh",
+            "scripts/anaconda.sh",
+            "scripts/vagrant.sh",
+            "scripts/cleanup.sh"
           ]
         }
       }
