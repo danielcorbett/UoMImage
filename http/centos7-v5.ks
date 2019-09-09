@@ -12,7 +12,6 @@
 # Basic setup information
 url --url="http://mirrors.kernel.org/centos/7/os/x86_64/"
 install
-#cdrom
 lang en_GB.UTF-8
 keyboard uk
 #network --onboot yes --device eth0 --bootproto dhcp --noipv6
