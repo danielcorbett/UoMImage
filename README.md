@@ -19,7 +19,7 @@ To build a vagrant box image the following command can be used...
 Once that has finished you should have a centos7-\*.box file. To use this file for starting up a Virtualbox machine you can use...
 
 	mkdir vagrant; cd vagrant
-	vagrant init ../centos7-\*.box
+	vagrant init ../centos7-*.box
 	vagrant up
 
 
