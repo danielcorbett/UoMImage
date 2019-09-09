@@ -1,6 +1,8 @@
-# UoMImage Read Me
+UoMImage Read Me
+================
 
-##Overview
+Overview
+--------
 The object of this repository is to have a single way to create disk images using a single set of files. The disk images currently use a kickstart file as their basis. That file is stored in the 'http' directory at the root repository level. This is currently used for centos 7 installations and is currently capable of building Docker and Virtualbox images.
 
 Additions to any of the built images can be created by using the Bash scripts in the 'scripts' directory.
