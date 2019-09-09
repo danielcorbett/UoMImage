@@ -6,9 +6,9 @@ MAIN_ISO=$MAIN_NAME.iso
 MAIN_ISO_FQ=/var/tmp/$MAIN_ISO
 MAIN_LOG=$MAIN_NAME.log
 MAIN_TAR=$MAIN_NAME.tar.xz
-INPUT_KS=/UoMImage/http/centos7.ks
-SCRIPT_DIR=/UoMImage/scripts
-CENTOS_BOOT_ISO=/UoMImage/http/boot.iso
+INPUT_KS=/http/centos7.ks
+SCRIPT_DIR=scripts/additions
+CENTOS_BOOT_ISO=/http/boot.iso
 
 echo -e "\nCreating Kickstart File $MAIN_KS"
 
