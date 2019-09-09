@@ -12,11 +12,19 @@ Building Virtualbox Images
 --------------------------
 Making use of the main kickstart file, the program Packer is used to build the image. Packer makes use of JSON files and Vagrant.
 
-To build a Virtualbox image the following command can be used...
+To build a vagrant box image the following command can be used...
 
 	packer build ./templates/template-base.json
+
+Once that has finished you should have a centos7-\*.box file. To use this file for starting up a Virtualbox machine you can use...
+
+mkdir vagrant; cd vagrant
+vagrant init ../centos7-\*.box
+vagrant up
 
 
 Building Docker Images
 ----------------------
-This can be done by using the scripts in the 'docker' directory. It requires the main kickstart file and optionally using the additions scripts. It also requires the livemedia-creator program and docker to be running in the background. It also requires the boot.iso which is available from the general Centos download repositories and whose location can be found by the links from within the relevant files in the 'http' directory.
+This can be done by using the scripts in the 'docker' directory. It requires the main kickstart file and optionally using the additions scripts. It also requires the livemedia-creator program and docker to be running in the background. It also requires the boot.iso which can be obtained by running the following command...
+
+	cd http; wget `cat boot_iso_link.txt`
