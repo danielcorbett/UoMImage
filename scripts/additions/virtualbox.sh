@@ -10,7 +10,7 @@ rc=$?
 rc=0
 
 umount /mnt
-#rm -rf /home/vagrant/VBoxGuestAdditions.iso
+rm -rf /home/vagrant/VBoxGuestAdditions.iso
 
 if [ $rc -ne 0 ]
 then
