@@ -9,6 +9,7 @@
             "scripts/base-gui.sh",
             "scripts/anaconda.sh",
             "scripts/vagrant.sh",
+            "scripts/tigervnc.sh",
             "scripts/cleanup.sh"
           ]
         }
