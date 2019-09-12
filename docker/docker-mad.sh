@@ -2,7 +2,7 @@
 
 ./docker/get_centos_iso.sh
 
-MAIN_NAME=centos-r
+MAIN_NAME=centos7-mad
 MAIN_KS=$MAIN_NAME.ks
 MAIN_ISO=$MAIN_NAME.iso
 MAIN_ISO_FQ=/var/tmp/$MAIN_ISO
