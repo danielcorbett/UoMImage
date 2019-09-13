@@ -23,7 +23,7 @@ systemctl restart kubelet && systemctl enable kubelet
 
 swapoff -a
 
-kubeadm reset
+kubeadm reset -f
 kubeadm init
 
 cp /etc/kubernetes/admin.conf ~/.kube/config
