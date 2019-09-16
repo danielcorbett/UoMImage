@@ -21,6 +21,9 @@ yum install kubeadm docker -y
 systemctl restart docker && systemctl enable docker
 systemctl restart kubelet && systemctl enable kubelet
 
+docker stop `docker ps -a | cut -c 1-12`
+docker rm `docker ps -a | cut -c 1-12`
+
 swapoff -a
 
 kubeadm reset -f
