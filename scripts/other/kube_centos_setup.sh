@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "\n\nWARNING: If the following disk usage is above 85% then problems will occur..."
+df -h / --output=pcent | tail -1
+echo "\n\n"
+
 setenforce 0
 sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 
@@ -22,23 +26,17 @@ yum install kubeadm docker -y
 systemctl restart docker && systemctl enable docker
 systemctl restart kubelet && systemctl enable kubelet
 
-docker stop `docker ps -a | cut -c 1-12`
-docker rm `docker ps -a | cut -c 1-12`
+#docker stop `docker ps -a | cut -c 1-12`
+#docker rm `docker ps -a | cut -c 1-12`
 
 swapoff -a
 
 kubeadm reset -f
 kubeadm init
 
-sleep 10
-
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
-sleep 10
-
 cp /etc/kubernetes/admin.conf ~$USERNAME/.kube/config
-
-sleep 10
 
 kubever=$(kubectl version | base64 | tr -d '\n')
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
