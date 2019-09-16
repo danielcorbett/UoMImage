@@ -35,3 +35,6 @@ kubever=$(kubectl version | base64 | tr -d '\n')
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
+
+#kubectl run discovery --image=dc243cam/dceks --port=6901
+#kubectl expose deployment discovery --type=NodePort
