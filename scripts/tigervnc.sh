@@ -1,15 +1,12 @@
 #!/bin/bash
 
-VNCSERVICE=vncserver\@.service
-VNCSERVICENUM=vncserver\@:0.service
+export DISPLAY=$HOSTNAME:0
 
-yum install tigervnc-server -y
-cp /lib/systemd/system/$VNCSERVICE /etc/systemd/system/$VNCSERVICE
-sed -i 's/<USER>/vagrant/' /etc/systemd/system/$VNCSERVICE
-mkdir /home/vagrant/.vnc
-echo "<‰ôFmÂ¦z" > /home/vagrant/.vnc/passwd
-chown -R vagrant /home/vagrant/.vnc
-chmod 600 /home/vagrant/.vnc/passwd
-systemctl daemon-reload
-systemctl enable $VNCSERVICENUM
-systemctl start $VNCSERVICENUM
+yum install novnc xorg-x11-xinit tigervnc-server xterm xfce4-panel xfwm4 -y
+/usr/bin/novnc_server --vnc localhost:5901 --listen 6901 &
+
+xinit -- /usr/bin/Xvnc :0 -auth /root/.Xauthority -depth 24 -desktop $HOSTNAME:0 -fp /usr/share/fonts/X11//misc,/usr/share/fonts/X11//Type1 -geometry 1280x1024 -pn -SecurityTypes=none -rfbport 5901 -rfbwait 30000 -NeverShared &   
+
+/usr/bin/xfce4-panel &
+
+/usr/bin/xfwm4 &
