@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yum install yum-plugin-ovl -y
 yum install novnc xorg-x11-xinit tigervnc-server xterm xfce4-panel xfwm4 -y
 
 echo "export DISPLAY=$HOSTNAME:0" > /usr/local/bin/tigervnc.sh
