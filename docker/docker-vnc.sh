@@ -41,4 +41,4 @@ virt-tar-out -a $MAIN_ISO_FQ / - | xz --best > $MAIN_TAR
 echo -e "\nDealing with Docker!"
 docker rm `docker ps -a | grep $MAIN_NAME | cut -c1-12`
 docker rmi $MAIN_NAME
-cat $MAIN_TAR | docker import - $MAIN_NAME
+cat $MAIN_TAR | docker import --change "CMD /usr/local/bin/tigervnc.sh" - $MAIN_NAME
