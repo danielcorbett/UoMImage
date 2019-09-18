@@ -7,7 +7,7 @@ MAIN_KS=$MAIN_NAME.ks
 MAIN_ISO=$MAIN_NAME.iso
 MAIN_ISO_FQ=/var/tmp/$MAIN_ISO
 MAIN_LOG=$MAIN_NAME.log
-MAIN_TAR=$MAIN_NAME.tar.xz
+MAIN_TAR=$MAIN_NAME.tar
 INPUT_KS=http/centos7.ks
 SCRIPT_DIR=scripts
 CENTOS_BOOT_ISO=http/boot.iso
@@ -21,7 +21,7 @@ sed -i '0,/\%end/s//bind-utils\nbash\nyum\nvim-minimal\ncentos-release\nless\n\-
 
 sed -i '$ d' $MAIN_KS
 
-for i in base-nogui.sh anaconda.sh vagrant.sh tigervnc.sh cleanup.sh;
+for i in base-nogui.sh anaconda.sh vagrant.sh tigervnc.sh;
 do
 	echo -e "\n\n###  Script $i  ###" >> $MAIN_KS
 	tail -n +2 $SCRIPT_DIR/$i >> $MAIN_KS
@@ -41,4 +41,4 @@ virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR
 echo -e "\nDealing with Docker!"
 docker rm `docker ps -a | grep $MAIN_NAME | cut -c1-12`
 docker rmi $MAIN_NAME
-cat $MAIN_TAR | docker import --change "CMD /usr/local/bin/tigervnc.sh" - $MAIN_NAME
+cat $MAIN_TAR | docker import --change "ENTRYPOINT /usr/local/bin/tigervnc.sh" - $MAIN_NAME
