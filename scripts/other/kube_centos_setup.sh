@@ -36,6 +36,7 @@ kubeadm init
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
+mkdir ~$USERNAME/.kube
 cp /etc/kubernetes/admin.conf ~$USERNAME/.kube/config
 
 kubever=$(kubectl version | base64 | tr -d '\n')
