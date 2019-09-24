@@ -3,6 +3,7 @@
 TMP_ASTER="/tmp/code-aster"
 TMP_SATURNE="/tmp/code-saturne"
 MASTER_ASTER="/opt/aster"
+HOME_ASTER="/opt/aster"
 
 URL_SATURNE="http://code-saturne.org/cms/sites/default/files/releases"
 FILE_SATURNE="code_saturne-5.0.10.tar.gz"
