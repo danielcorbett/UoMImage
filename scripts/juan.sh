@@ -19,7 +19,7 @@ yum install xterm pyqt4 pyqt4-devel libxml2-devel wget gcc gcc-gfortran -y
 
 rm -rf $TMP_SATURNE $TMP_ASTER $MASTER_ASTER
 
-echo -e "#\!/bin/bash\n\n" > /root/path.sh
+echo -e "#!/bin/bash\n\n" > /root/path.sh
 echo -e "export PATH=/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin" >> /root/path.sh
 
 mkdir $TMP_SATURNE
@@ -69,6 +69,7 @@ echo "$ASTER_PUBLIC/tfel-3.1.1/lib" >> $ASTER_LD
 /sbin/ldconfig
 
 TFELHOME=$ASTER_PUBLIC/tfel-3.1.1
+HOME_METIS=$ASTER_PUBLIC/metis-5.1.0
 cd $TMP_ASTER/$VERSION_ASTER_STABLE
 python ./setup.py install aster --noprompt
 
