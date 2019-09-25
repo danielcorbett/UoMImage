@@ -11,6 +11,7 @@ MAIN_TAR=$MAIN_NAME.tar.xz
 INPUT_KS=http/centos7.ks
 SCRIPT_DIR=scripts
 CENTOS_BOOT_ISO=http/boot.iso
+SAVED_IMAGES=../saved_images/docker
 
 echo -e "\nCreating Kickstart File $MAIN_KS"
 
@@ -43,3 +44,8 @@ echo -e "\nDealing with Docker!"
 docker rm `docker ps -a | grep $MAIN_NAME | cut -c1-12`
 docker rmi $MAIN_NAME
 cat $MAIN_TAR | docker import - $MAIN_NAME
+
+echo -e "\nCleaning Up"
+rm -f $MAIN_ISO_FQ
+mkdir -p $SAVED_IMAGES
+mv $MAIN_TAR $SAVED_IMAGES/.
