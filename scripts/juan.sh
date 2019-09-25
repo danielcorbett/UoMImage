@@ -21,6 +21,7 @@ rm -rf $TMP_SATURNE $TMP_ASTER $MASTER_ASTER
 
 echo -e "#!/bin/bash\n\n" > /root/path.sh
 echo -e "export PATH=/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin" >> /root/path.sh
+echo -e "export TFELHOME=/opt/aster/public/tfel-3.1.1" >> /root/path.sh
 
 mkdir $TMP_SATURNE
 cd $TMP_SATURNE
