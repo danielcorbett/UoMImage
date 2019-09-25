@@ -40,7 +40,7 @@ mkdir $TMP_ASTER
 cd $TMP_ASTER
 wget $URL_ASTER/$FILE_ASTER_STABLE
 tar -xvzf $FILE_ASTER_STABLE
-cd $FILE_ASTER_STABLE
+cd $VERSION_ASTER_STABLE
 
 for i in astk gmsh grace hdf5 homard med metis mumps scotch;
 do
