@@ -19,6 +19,9 @@ yum install xterm pyqt4 pyqt4-devel libxml2-devel wget gcc gcc-gfortran -y
 
 rm -rf $TMP_SATURNE $TMP_ASTER $MASTER_ASTER
 
+echo -e "#!/bin/bash\n\n" >> /root/path.sh
+echo -e "export PATH=/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin" > /root/path.sh
+
 mkdir $TMP_SATURNE
 cd $TMP_SATURNE
 wget $URL_SATURNE/$FILE_SATURNE
