@@ -46,4 +46,4 @@ cat ./templates/other/template-middle.json >> $OUTFILE
 echo -e "          \"output\": \"centos7-$BOX_NAME.box\"" >> $OUTFILE
 cat ./templates/other/template-bottom.json >> $OUTFILE
 
-packer $OUTFILE
+packer build $OUTFILE
