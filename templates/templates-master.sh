@@ -1,5 +1,8 @@
 #!/bin/bash
 
+MASTERURL="http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/isos/x86_64/"
+#MASTERURL="http://ftp.pbone.net/pub/centos/7/isos/x86_64/"
+
 echo -e "\nPlease select which image to create...\n"
 echo -e "\n1) Juan (Code Aster & Code Saturn)"
 echo -e "\n2) MAD (Mongo DB, Apache Spark and Django)"
@@ -16,7 +19,8 @@ case "$selection" in
 		;;
 	2)
 		BOX_NAME="mad"
-		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh MAD.sh cleanup.sh"
+#		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh MAD.sh cleanup.sh"
+		PACKAGES="base-nogui.sh vagrant.sh MAD.sh cleanup.sh"
 		;;
 	3)
 		BOX_NAME="r"
@@ -45,6 +49,16 @@ do
 done
 cat ./templates/other/template-middle.json >> $OUTFILE
 echo -e "          \"output\": \"centos7-$BOX_NAME.box\"" >> $OUTFILE
+cat ./templates/other/template-nearbottom.json >> $OUTFILE
+
+wget $MASTERURL/sha256sum.txt -P /tmp
+
+CHECKSUM=`grep Minimal /tmp/sha256sum.txt | grep iso | cut -d' ' -f1`
+ISOURL=`grep Minimal /tmp/sha256sum.txt | grep iso | cut -d' ' -f3`
+
+#echo -e "      \"iso_checksum\": \"$CHECKSUM\"," >> $OUTFILE
+echo -e "      \"iso_checksum\": \"6b25a6bb2c0c04156c61a802f180fca9dee322fa4f572c77a52a9bd96802d528\"," >> $OUTFILE
+echo -e "      \"iso_url\": \"$MASTERURL\/$ISOURL\"," >> $OUTFILE
 cat ./templates/other/template-bottom.json >> $OUTFILE
 
 packer build $OUTFILE
