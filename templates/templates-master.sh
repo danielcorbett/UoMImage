@@ -11,7 +11,8 @@ read -p "Selection: " selection
 case "$selection" in
 	1)
 		BOX_NAME="juan"
-		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh juan.sh cleanup.sh"
+#		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh juan.sh cleanup.sh"
+		PACKAGES="base-nogui.sh vagrant.sh juan.sh cleanup.sh"
 		;;
 	2)
 		BOX_NAME="mad"
