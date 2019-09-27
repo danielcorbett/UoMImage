@@ -31,6 +31,7 @@ cd code_saturne*
 ./configure
 make
 make install
+rm -rf $TMP_SATURNE
 
 . /root/path.sh
 PATH=/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin
@@ -73,5 +74,7 @@ TFELHOME=$ASTER_PUBLIC/tfel-3.1.1
 HOME_METIS=$ASTER_PUBLIC/metis-5.1.0
 cd $TMP_ASTER/$VERSION_ASTER_STABLE
 python ./setup.py install aster --noprompt
+
+rm -rf $TMP_ASTER
 
 . /root/path.sh
