@@ -56,8 +56,7 @@ wget $MASTERURL/sha256sum.txt -P /tmp
 CHECKSUM=`grep Minimal /tmp/sha256sum.txt | grep iso | cut -d' ' -f1`
 ISOURL=`grep Minimal /tmp/sha256sum.txt | grep iso | cut -d' ' -f3`
 
-#echo -e "      \"iso_checksum\": \"$CHECKSUM\"," >> $OUTFILE
-echo -e "      \"iso_checksum\": \"6b25a6bb2c0c04156c61a802f180fca9dee322fa4f572c77a52a9bd96802d528\"," >> $OUTFILE
+echo -e "      \"iso_checksum\": \"$CHECKSUM\"," >> $OUTFILE
 echo -e "      \"iso_url\": \"$MASTERURL/$ISOURL\"," >> $OUTFILE
 cat ./templates/other/template-bottom.json >> $OUTFILE
 
