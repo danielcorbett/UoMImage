@@ -1,7 +1,5 @@
 #!/bin/bash
 
-OUTFILE="./templates/other/template-selection.json"
-
 echo -e "\nPlease select which image to create...\n"
 echo -e "\n1) Juan (Code Aster & Code Saturn)"
 echo -e "\n2) MAD (Mongo DB, Apache Spark and Django)"
@@ -29,6 +27,8 @@ case "$selection" in
 		;;
 	esac
 
+OUTFILE="./templates/other/template-$BOX_NAME.json"
+
 cat ./templates/other/template-top.json > $OUTFILE
 SIZE=0; for i in $PACKAGES; do SIZE=$((SIZE+1)); done
 COUNT=0
@@ -45,3 +45,5 @@ done
 cat ./templates/other/template-middle.json >> $OUTFILE
 echo -e "          \"output\": \"centos7-$BOX_NAME.box\"" >> $OUTFILE
 cat ./templates/other/template-bottom.json >> $OUTFILE
+
+packer $OUTFILE
