@@ -4,10 +4,14 @@ MASTERURL="http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/isos/x86_64"
 #MASTERURL="http://ftp.pbone.net/pub/centos/7/isos/x86_64/"
 
 echo -e "\nPlease select which image to create...\n"
-echo -e "\n1) Juan (Code Aster & Code Saturn)"
-echo -e "\n2) MAD (Mongo DB, Apache Spark and Django)"
-echo -e "\n3) R"
-echo -e "\n4) VNC (TigerVNC)"
+echo -e "\n1) Juan with GUI (Code Aster & Code Saturn)"
+echo -e "\n2) MAD with GUI (Mongo DB, Apache Spark and Django)"
+echo -e "\n3) R with GUI "
+echo -e "\n4) Base with GUI "
+echo -e "\n1) Juan no GUI (Code Aster & Code Saturn)"
+echo -e "\n2) MAD no GUI (Mongo DB, Apache Spark and Django)"
+echo -e "\n3) R no GUI "
+echo -e "\n4) Base no GUI "
 echo -e ""
 read -p "Selection: " selection
 
