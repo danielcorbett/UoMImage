@@ -8,25 +8,30 @@ echo -e "\n1) Juan (Code Aster & Code Saturn)"
 echo -e "\n2) MAD (Mongo DB, Apache Spark and Django)"
 echo -e "\n3) R"
 echo -e "\n4) VNC (TigerVNC)"
+echo -e "\n5) Base"
 echo -e ""
 read -p "Selection: " selection
 
 case "$selection" in
 	1)
 		MAIN_NAME="centos7-juan"
-		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh juan.sh cleanup.sh"
+		PACKAGES="base-nogui.sh vagrant.sh juan.sh cleanup.sh"
 		;;
 	2)
 		MAIN_NAME="centos7-mad"
-		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh MAD.sh cleanup.sh"
+		PACKAGES="base-nogui.sh vagrant.sh MAD.sh cleanup.sh"
 		;;
 	3)
 		MAIN_NAME="centos7-r"
-		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh cleanup.sh R.sh"
+		PACKAGES="base-nogui.sh vagrant.sh cleanup.sh R.sh"
 		;;
 	4)
 		MAIN_NAME="centos7-vnc"
-		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh tigervnc.sh"
+		PACKAGES="base-nogui.sh vagrant.sh tigervnc.sh"
+		;;
+	5)
+		MAIN_NAME="centos7-base"
+		PACKAGES="base-nogui.sh vagrant.sh"
 		;;
 	esac
 
