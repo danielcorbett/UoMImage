@@ -28,7 +28,8 @@ case "$selection" in
 		;;
 	4)
 		BOX_NAME="vnc"
-		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh tigervnc.sh"
+#		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh tigervnc.sh"
+		PACKAGES="base-nogui.sh vagrant.sh tigervnc.sh"
 		;;
 	esac
 
