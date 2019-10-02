@@ -4,6 +4,7 @@ yum install yum-plugin-ovl -y
 yum install novnc -y
 yum install xorg-x11-xinit -y
 yum install tigervnc-server -y
+yum install tigervnc-server-minimal -y
 yum install xterm -y
 yum install xfce4-panel -y
 yum install xfwm4 -y
