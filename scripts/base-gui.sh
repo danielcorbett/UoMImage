@@ -14,3 +14,6 @@ yum groupinstall "MATE Desktop" -y
 unlink /etc/systemd/system/default.target
 ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target
 yum -y install wget
+
+lvextend -l+100%FREE /dev/VolGroup/lv_root
+resize2fs /dev/VolGroup/lv_root
