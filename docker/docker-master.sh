@@ -3,14 +3,6 @@
 CENTOS_BOOT_ISO=http/boot.iso
 CENTOS_URL=http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/os/x86_64/images/boot.iso
 
-echo -e "\n\nDownloading Centos Boot ISO, if required...\n"
-CENTOS_ISO=$CENTOS_BOOT_ISO
-CENTOS_HTTP=$CENTOS_URL
-
-if [ ! -f $CENTOS_ISO ]; then
-	wget $CENTOS_HTTP -P ./http
-fi
-
 echo -e "\nPlease select which image to create...\n"
 echo -e "\n1) Juan (Code Aster & Code Saturn)"
 echo -e "\n2) MAD (Mongo DB, Apache Spark and Django)"
@@ -48,6 +40,14 @@ MAIN_TAR=$MAIN_NAME.tar.xz
 INPUT_KS=http/centos7.ks
 SCRIPT_DIR=scripts
 SAVED_IMAGES=../saved_images/docker
+
+echo -e "\n\nDownloading Centos Boot ISO, if required...\n"
+CENTOS_ISO=$CENTOS_BOOT_ISO
+CENTOS_HTTP=$CENTOS_URL
+
+if [ ! -f $CENTOS_ISO ]; then
+	wget $CENTOS_HTTP -P ./http
+fi
 
 echo -e "\n\nCreating Kickstart File $MAIN_KS"
 
