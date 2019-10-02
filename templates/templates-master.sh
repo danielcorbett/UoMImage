@@ -13,23 +13,39 @@ read -p "Selection: " selection
 
 case "$selection" in
 	1)
-		BOX_NAME="juan"
+		BOX_NAME="juan w/GUI"
 #		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh juan.sh cleanup.sh"
 		PACKAGES="base-gui.sh vagrant.sh juan.sh"
 		;;
 	2)
-		BOX_NAME="mad"
+		BOX_NAME="mad w/GUI"
 #		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh MAD.sh cleanup.sh"
 		PACKAGES="base-gui.sh vagrant.sh MAD.sh"
 		;;
 	3)
-		BOX_NAME="r"
+		BOX_NAME="r w/GUI"
 		PACKAGES="base-gui.sh anaconda.sh vagrant.sh R.sh"
 		;;
 	4)
-		BOX_NAME="base"
+		BOX_NAME="base w/GUI"
 #		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh tigervnc.sh"
 		PACKAGES="base-gui.sh vagrant.sh"
+		;;
+	5)
+		BOX_NAME="juan no GUI"
+		PACKAGES="base-nogui.sh vagrant.sh juan.sh"
+		;;
+	6)
+		BOX_NAME="mad no GUI"
+		PACKAGES="base-nogui.sh vagrant.sh MAD.sh"
+		;;
+	7)
+		BOX_NAME="r no GUI"
+		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh R.sh"
+		;;
+	8)
+		BOX_NAME="base no GUI"
+		PACKAGES="base-nogui.sh vagrant.sh"
 		;;
 	esac
 
