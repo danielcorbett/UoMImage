@@ -1,5 +1,8 @@
 #!/bin/bash
 
+exec >> docker-master.log
+exec 2>&1
+
 CENTOS_BOOT_ISO=http/boot.iso
 CENTOS_URL=http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/os/x86_64/images/boot.iso
 
@@ -41,7 +44,7 @@ MAIN_KS=$MAIN_NAME.ks
 MAIN_ISO=$MAIN_NAME.iso
 MAIN_ISO_FQ=/var/tmp/$MAIN_ISO
 MAIN_LOG=$MAIN_NAME.log
-MAIN_TAR=$MAIN_NAME.tar.xz
+MAIN_TAR=$MAIN_NAME.tar
 INPUT_KS=http/centos7.ks
 SCRIPT_DIR=scripts
 SAVED_IMAGES=../saved_images/docker
@@ -78,8 +81,8 @@ echo -e "\nStarting ISO creation"
 livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$MAIN_ISO --logfile=$MAIN_LOG --keep-image
 
 echo -e "\nCreating TAR file required for Docker import"
-#virt-tar-out -a $MAIN_ISO_FQ / - | xz > $MAIN_TAR
-virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR
+echo -e "/bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR"
+/bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR
 
 echo -e "\nDealing with Docker!"
 docker rm `docker ps -a | grep $MAIN_NAME | cut -c1-12`
