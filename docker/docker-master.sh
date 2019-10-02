@@ -1,8 +1,5 @@
 #!/bin/bash
 
-exec >> docker-master.log
-exec 2>&1
-
 CENTOS_BOOT_ISO=http/boot.iso
 CENTOS_URL=http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7/os/x86_64/images/boot.iso
 
@@ -40,6 +37,9 @@ case "$selection" in
 
 echo -e "\n\nMain name is $MAIN_NAME"
 
+exec >> docker-master.log
+exec 2>&1
+
 MAIN_KS=$MAIN_NAME.ks
 MAIN_ISO=$MAIN_NAME.iso
 MAIN_ISO_FQ=/var/tmp/$MAIN_ISO
@@ -75,10 +75,10 @@ done
 echo "%end" >> $MAIN_KS
 
 echo -e "\nRemove old version of ISO ($MAIN_ISO) due to be created?"
-rm -i $MAIN_ISO_FQ
+#rm -i $MAIN_ISO_FQ
 
 echo -e "\nStarting ISO creation"
-livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$MAIN_ISO --logfile=$MAIN_LOG --keep-image
+#livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$MAIN_ISO --logfile=$MAIN_LOG --keep-image
 
 echo -e "\nCreating TAR file required for Docker import"
 echo -e "/bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR"
