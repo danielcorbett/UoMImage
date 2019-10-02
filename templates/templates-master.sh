@@ -15,16 +15,16 @@ case "$selection" in
 	1)
 		BOX_NAME="juan"
 #		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh juan.sh cleanup.sh"
-		PACKAGES="base-gui.sh vagrant.sh juan.sh cleanup.sh"
+		PACKAGES="base-gui.sh vagrant.sh juan.sh"
 		;;
 	2)
 		BOX_NAME="mad"
 #		PACKAGES="base-nogui.sh anaconda.sh vagrant.sh MAD.sh cleanup.sh"
-		PACKAGES="base-gui.sh vagrant.sh MAD.sh cleanup.sh"
+		PACKAGES="base-gui.sh vagrant.sh MAD.sh"
 		;;
 	3)
 		BOX_NAME="r"
-		PACKAGES="base-gui.sh anaconda.sh vagrant.sh cleanup.sh R.sh"
+		PACKAGES="base-gui.sh anaconda.sh vagrant.sh R.sh"
 		;;
 	4)
 		BOX_NAME="base"
