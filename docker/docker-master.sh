@@ -87,7 +87,12 @@ echo -e "/bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR"
 echo -e "\nDealing with Docker!"
 docker rm `docker ps -a | grep $MAIN_NAME | cut -c1-12`
 docker rmi $MAIN_NAME
-cat $MAIN_TAR | docker import - $MAIN_NAME
+if [ $selection -eq "4" ]
+then
+	cat $MAIN_TAR | docker import --change 'CMD ["/usr/local/bin/tigervnc.sh"]' - centos7-vnc
+elif
+	cat $MAIN_TAR | docker import - $MAIN_NAME
+fi
 
 echo -e "\nCleaning Up"
 rm -f $MAIN_ISO_FQ
