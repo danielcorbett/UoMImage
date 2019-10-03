@@ -80,6 +80,7 @@ livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$
 echo -e "\nCreating TAR file required for Docker import"
 echo -e "/bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR"
 /bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR
+rm -f $MAIN_ISO_FQ
 
 echo -e "\nDealing with Docker!"
 docker rm `docker ps -a | grep $MAIN_NAME | cut -c1-12`
@@ -91,9 +92,6 @@ else
 	cat $MAIN_TAR | docker import - $MAIN_NAME
 fi
 
-echo -e "\nCleaning Up"
-rm -f $MAIN_ISO_FQ
-mkdir -p $SAVED_IMAGES
-
 echo -e "\nSaving Docker image files to $PWD/$SAVED_IMAGES"
+mkdir -p $SAVED_IMAGES
 mv $MAIN_TAR $SAVED_IMAGES/.
