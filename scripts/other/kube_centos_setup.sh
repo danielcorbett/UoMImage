@@ -8,6 +8,10 @@ setenforce 0
 sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 
 systemctl stop firewalld
+#firewall-cmd --add-rich-rule='rule family=ipv4 source address=127.0.0.1 port port=6443 protocol=tcp accept'
+#firewall-cmd --add-rich-rule='rule family=ipv4 source address=127.0.0.1 port port=10250 protocol=tcp accept'
+#firewall-cmd --add-rich-rule='rule family=ipv4 source address=127.0.0.1 port port=6901 protocol=tcp accept'
+#firewall-cmd --add-rich-rule='rule family=ipv4 source address=127.0.0.1 port port=5901 protocol=tcp accept'
 
 modprobe br_netfilter
 echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
@@ -34,10 +38,12 @@ swapoff -a
 kubeadm reset -f
 kubeadm init
 
-kubectl taint nodes --all node-role.kubernetes.io/master-
-
 mkdir ~$USERNAME/.kube
+chown $USERNAME ~$USERNAME/.kube
 cp /etc/kubernetes/admin.conf ~$USERNAME/.kube/config
+chown $USERNAME ~$USERNAME/.kube/config
+
+kubectl taint nodes --all node-role.kubernetes.io/master-
 
 kubever=$(kubectl version | base64 | tr -d '\n')
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
