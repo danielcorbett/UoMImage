@@ -12,6 +12,7 @@ yum install xfwm4 -y
 rm -f /usr/local/bin/tigervnc.sh
 exec 3<> /usr/local/bin/tigervnc.sh
 
+echo -e "#!/bin/bash\n" >&3
 echo "export DISPLAY=$HOSTNAME:0" >&3
 echo "export XFCE_PANEL_MIGRATE_DEFAULT=1" >&3
 echo "/usr/bin/novnc_server --vnc localhost:5901 --listen 6901 &" >&3
