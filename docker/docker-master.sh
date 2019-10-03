@@ -37,9 +37,6 @@ case "$selection" in
 
 echo -e "\n\nMain name is $MAIN_NAME"
 
-#exec >> docker-master.log
-#exec 2>&1
-
 MAIN_KS=$MAIN_NAME.ks
 MAIN_ISO=$MAIN_NAME.iso
 MAIN_ISO_FQ=/var/tmp/$MAIN_ISO
@@ -90,11 +87,13 @@ docker rmi $MAIN_NAME
 if [ $selection -eq "4" ]
 then
 	cat $MAIN_TAR | docker import --change 'CMD ["/usr/local/bin/tigervnc.sh"]' - centos7-vnc
-elif
+else
 	cat $MAIN_TAR | docker import - $MAIN_NAME
 fi
 
 echo -e "\nCleaning Up"
 rm -f $MAIN_ISO_FQ
 mkdir -p $SAVED_IMAGES
+
+echo -e "\nSaving Docker image files to $PWD/$SAVED_IMAGES"
 mv $MAIN_TAR $SAVED_IMAGES/.
