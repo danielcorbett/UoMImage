@@ -20,3 +20,10 @@ yum -y install wget
 
 lvextend -l+100%FREE /dev/VolGroup/lv_root
 resize2fs /dev/VolGroup/lv_root
+
+yum groupinstall -y "Xfce"
+echo "/bin/xfce4-session" ~/.Xclients
+
+yum install xrdp xorgxrdp
+systemctl enable xrdp
+systemctl start xrdp

@@ -19,7 +19,7 @@ case "$selection" in
 		;;
 	2)
 		MAIN_NAME="centos7-mad"
-		PACKAGES="base-nogui.sh vagrant.sh MAD.sh cleanup.sh"
+		PACKAGES="base-nogui.sh vagrant.sh MAD-docker.sh cleanup.sh"
 		;;
 	3)
 		MAIN_NAME="centos7-r"
