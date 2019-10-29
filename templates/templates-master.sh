@@ -12,6 +12,7 @@ echo -e "\n5) Juan no GUI (Code Aster & Code Saturn)"
 echo -e "\n6) MAD no GUI (Mongo DB, Apache Spark and Django)"
 echo -e "\n7) R no GUI "
 echo -e "\n8) Base no GUI "
+echo -e "\n9) Minimal "
 echo -e ""
 read -p "Selection: " selection
 
