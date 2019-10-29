@@ -51,6 +51,10 @@ case "$selection" in
 		BOX_NAME="base-no-GUI"
 		PACKAGES="base-nogui.sh vagrant.sh virtualbox.sh"
 		;;
+	9)
+		BOX_NAME="Minimal"
+		PACKAGES="minimal.sh"
+		;;
 	esac
 
 OUTFILE="./templates/other/template-$BOX_NAME.json"
