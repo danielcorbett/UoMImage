@@ -39,6 +39,6 @@ echo "/bin/xfce4-session" > ~/.Xclients
 echo "debug: Installing Xrdp"
 echo "Installing Xrdp"
 
-yum install xrdp xorgxrdp
+yum -y install xrdp xorgxrdp
 systemctl enable xrdp
 systemctl start xrdp
