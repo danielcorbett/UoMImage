@@ -3,6 +3,11 @@
 exec >> /tmp/base-gui.log
 exec 2>&1
 
+echo "debug: Expanding disk"
+
+lvextend -l+100%FREE /dev/VolGroup/lv_root
+resize2fs /dev/VolGroup/lv_root
+
 echo "debug: Installing base packages"
 
 sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
@@ -21,11 +26,6 @@ yum groupinstall "MATE Desktop" -y
 unlink /etc/systemd/system/default.target
 ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target
 yum -y install wget
-
-echo "debug: Expanding disk"
-
-lvextend -l+100%FREE /dev/VolGroup/lv_root
-resize2fs /dev/VolGroup/lv_root
 
 echo "debug: Installing Xfce"
 
