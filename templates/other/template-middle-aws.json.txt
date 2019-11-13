@@ -6,9 +6,9 @@
   "post-processors": [
     {
       "type": "amazon-import",
-      "access_key": "AKIA3AASE62LTW44DTR4",				-- or -- export AWS_ACCESS_KEY_ID=""
-      "secret_key": "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",		-- or -- export AWS_SECRET_ACCESS_KEY=""
-      "region": "us-east-1",						-- or -- export AWS_DEFAULT_REGION="us-east-1"
+      "access_key": "",		-- or -- export AWS_ACCESS_KEY_ID=""
+      "secret_key": "",		-- or -- export AWS_SECRET_ACCESS_KEY=""
+      "region": "us-east-1",	-- or -- export AWS_DEFAULT_REGION="us-east-1"
       "s3_bucket_name": "uomimage"
     }
   ],
