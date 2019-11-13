@@ -14,7 +14,13 @@ echo -e "\n7) R no GUI "
 echo -e "\n8) Base no GUI "
 echo -e "\n9) Minimal "
 echo -e ""
-read -p "Selection: " selection
+
+if [ ! -z "$1" ]
+then
+        selection=$1
+else
+        read -p "Selection: " selection
+fi
 
 case "$selection" in
 	1)
