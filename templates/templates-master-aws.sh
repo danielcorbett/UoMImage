@@ -79,7 +79,7 @@ do
 		echo "            \"scripts\/$i\"" >> $OUTFILE
 	fi
 done
-cat ./templates/other/template-middle.json >> $OUTFILE
+cat ./templates/other/template-middle-aws.json >> $OUTFILE
 #echo -e "          \"output\": \"centos7-$BOX_NAME.box\"" >> $OUTFILE
 #cat ./templates/other/template-nearbottom.json >> $OUTFILE
 
