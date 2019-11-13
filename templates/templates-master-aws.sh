@@ -90,6 +90,6 @@ ISOURL=`grep Minimal /tmp/sha256sum.txt | grep iso | cut -d' ' -f3`
 
 echo -e "      \"iso_checksum\": \"$CHECKSUM\"," >> $OUTFILE
 echo -e "      \"iso_url\": \"$MASTERURL/$ISOURL\"," >> $OUTFILE
-cat ./templates/other/template-bottom.json >> $OUTFILE
+cat ./templates/other/template-bottom-aws.json >> $OUTFILE
 
 packer build $OUTFILE
