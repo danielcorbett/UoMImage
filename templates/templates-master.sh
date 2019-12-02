@@ -83,6 +83,7 @@ cat ./templates/other/template-middle.json >> $OUTFILE
 echo -e "          \"output\": \"centos7-$BOX_NAME.box\"" >> $OUTFILE
 cat ./templates/other/template-nearbottom.json >> $OUTFILE
 
+export http_proxy="http://proxy.man.ac.uk:3128"
 wget $MASTERURL/sha256sum.txt -P /tmp
 
 CHECKSUM=`grep Minimal /tmp/sha256sum.txt | grep iso | cut -d' ' -f1`
