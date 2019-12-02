@@ -51,7 +51,7 @@ CENTOS_ISO=$CENTOS_BOOT_ISO
 CENTOS_HTTP=$CENTOS_URL
 
 if [ ! -f $CENTOS_ISO ]; then
-	wget $CENTOS_HTTP -P ./http
+	wget -q $CENTOS_HTTP -P ./http
 fi
 
 echo -e "\n\nCreating Kickstart File $MAIN_KS"
