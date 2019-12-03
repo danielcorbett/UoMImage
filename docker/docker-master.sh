@@ -47,7 +47,7 @@ echo -e "\n\nMain name is $MAIN_NAME"
 
 MAIN_KS=$MAIN_NAME.ks
 MAIN_ISO=$MAIN_NAME.iso
-MAIN_ISO_FQ=/var/tmp/$MAIN_ISO
+MAIN_ISO_FQ=/data/tmp/$MAIN_ISO
 MAIN_LOG=$MAIN_NAME.log
 MAIN_TAR=$MAIN_NAME.tar
 INPUT_KS=http/centos7.ks
