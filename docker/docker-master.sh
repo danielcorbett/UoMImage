@@ -87,6 +87,7 @@ echo -e "\nStarting ISO creation"
 sudo -u root livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$MAIN_ISO --logfile=$MAIN_LOG --keep-image --tmp=/data/tmp --proxy=proxy.man.ac.uk:3128
 
 echo -e "\nCreating TAR file required for Docker import"
+sleep 10
 echo -e "/bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR"
 /bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR
 rm -f $MAIN_ISO_FQ
