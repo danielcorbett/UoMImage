@@ -80,7 +80,7 @@ done
 echo "%end" >> $MAIN_KS
 
 echo -e "\nRemove old version of ISO ($MAIN_ISO) due to be created?"
-rm -i $MAIN_ISO_FQ
+rm -f $MAIN_ISO_FQ
 
 echo -e "\nStarting ISO creation"
 sudo -u root livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$MAIN_ISO --logfile=$MAIN_LOG --keep-image --tmp=/data/tmp
