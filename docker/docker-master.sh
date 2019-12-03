@@ -10,7 +10,13 @@ echo -e "\n3) R"
 echo -e "\n4) VNC (TigerVNC)"
 echo -e "\n5) Base"
 echo -e ""
-read -p "Selection: " selection
+
+if [ ! -z "$1" ]
+then
+        selection=$1
+else
+        read -p "Selection: " selection
+fi
 
 case "$selection" in
 	1)
