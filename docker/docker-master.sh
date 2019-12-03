@@ -83,7 +83,7 @@ echo -e "\nRemove old version of ISO ($MAIN_ISO) due to be created?"
 sudo rm -f $MAIN_ISO_FQ
 
 echo -e "\nStarting ISO creation"
-sudo -u root livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$MAIN_ISO --logfile=$MAIN_LOG --keep-image --tmp=/data/tmp
+sudo -u root livemedia-creator --make-iso --iso=$CENTOS_BOOT_ISO --ks=$MAIN_KS --image-name=$MAIN_ISO --logfile=$MAIN_LOG --keep-image --tmp=/data/tmp --proxy=proxy.man.ac.uk:3128
 
 echo -e "\nCreating TAR file required for Docker import"
 echo -e "/bin/virt-tar-out -a $MAIN_ISO_FQ / $MAIN_TAR"
